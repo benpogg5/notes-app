@@ -31,5 +31,11 @@ export const useNotes = () => {
     setNotes((notes) => [...notes, note]);
   };
 
-  return { notes, getNotes, setNotes, createNote, addNote };
+  // elimina una nota de la lista
+  const deleteNote = (deletedNote) => {
+    const updatedNotes = notes.filter(note => note.id !== deletedNote.id);
+    setNotes(updatedNotes);
+  }
+
+  return { notes, getNotes, setNotes, createNote, addNote, deleteNote };
 };

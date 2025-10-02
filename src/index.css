@@ -1,5 +1,7 @@
 :root {
   font-size: 10px;
+
+  --primary-color: hsl(239, 94, 19);
 }
 
 * {
