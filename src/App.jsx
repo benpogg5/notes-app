@@ -2,6 +2,7 @@ import NoteCard from "./features/notes/components/NoteCard";
 import NoteForm from "./features/notes/components/NoteForm";
 import { useNoteContext } from "./features/notes/context/NoteContext";
 import { useState, useEffect } from "react";
+import "./assets/css/app.scss";
 
 const App = () => {
   const { notes } = useNoteContext();
@@ -11,6 +12,8 @@ const App = () => {
   useEffect(() => {
     setNoteCards(notes.map((note) => <NoteCard key={note.id} data={note} />));
   }, [notes]);
+
+  document.title = "Notes App";
 
   return (
     <div className="app">
@@ -24,7 +27,7 @@ const App = () => {
         </div>
       </main>
       <footer>
-        <p>Created by Benjamín Poggio.</p>
+        <p className="text">Created by Benjamín Poggio.</p>
       </footer>
     </div>
   );

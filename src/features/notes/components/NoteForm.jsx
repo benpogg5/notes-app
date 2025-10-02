@@ -27,10 +27,12 @@ const NoteForm = () => {
 
   return (
     <div className="note-form">
-      <h2 className="subtitle">Add a New Note</h2>
+      <h2 className="title">Add a New Note</h2>
+      <div className="form">
       <input className="input" type="text" placeholder="Title" onChange={titleHandler} />
       <textarea className="input" placeholder="Content" onChange={contentHandler}></textarea>
       <Button action={updateNotes} text="Add note" />
+      </div>
     </div>
   );
 };
