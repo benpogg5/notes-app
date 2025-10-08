@@ -1,0 +1,17 @@
+.app {
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  min-height: 100dvh;
+
+  .header,
+  .content,
+  .footer {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+  }
+}
