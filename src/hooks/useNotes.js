@@ -17,9 +17,16 @@ export const useNotes = () => {
   };
 
   const removeNote = (deletedNote) => {
-    const updatedNotes = notes.filter(note => note.id !== deletedNote.id);
+    const updatedNotes = notes.filter((note) => note.id !== deletedNote.id);
     setNotes(updatedNotes);
-  }
+  };
+
+  const editNote = (editedNote) => {
+    const updatedNotes = notes.map((note) =>
+      note.id === editedNote.id ? editedNote : note
+    );
+    setNotes(updatedNotes);
+  };
 
   useEffect(() => {
     updateNotes();
@@ -31,5 +38,6 @@ export const useNotes = () => {
     setNotes,
     addNote,
     removeNote,
+    editNote,
   };
 };
